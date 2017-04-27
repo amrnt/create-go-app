@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+  app:
+    build: .
+    volumes:
+      - .:/go/src/github.com/amrnt/create-go-app
+    ports:
+      - '8080:8080'
+    links:
+      - postgres
+
+  postgres:
+    image: postgres:9.6.2-alpine
+    volumes:
+      - ./tmp/postgres/data:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+    logging:
+      driver: none
