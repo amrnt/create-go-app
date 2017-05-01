@@ -1,7 +1,6 @@
 package cmd
 
 import (
-	"fmt"
 	"os"
 
 	"github.com/amrnt/create-go-app/pkg/config"
@@ -21,7 +20,7 @@ func init() {
 // Execute ...
 func Execute() {
 	if err := config.DefaultApp.Cmd.Execute(); err != nil {
-		fmt.Println(err)
+		config.DefaultApp.Logger.Error(err)
 		os.Exit(-1)
 	}
 }

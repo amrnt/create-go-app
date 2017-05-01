@@ -1,7 +1,6 @@
 package cmd
 
 import (
-	"fmt"
 	"runtime"
 	"strings"
 	"time"
@@ -27,9 +26,9 @@ var versionCmd = &cobra.Command{
 		}
 
 		if config.CommitHash == "" {
-			fmt.Printf("\033[32mcreate-go-app\033[0m v%s %s/%s BuildDate: %s\n", config.Version, runtime.GOOS, runtime.GOARCH, config.BuildDate)
+			config.DefaultApp.Logger.Infof("\033[32mcreate-go-app\033[0m v%s %s/%s BuildDate: %s\n", config.Version, runtime.GOOS, runtime.GOARCH, config.BuildDate)
 		} else {
-			fmt.Printf("\033[32mcreate-go-app\033[0m v%s-%s %s/%s BuildDate: %s\n", config.Version, strings.ToUpper(config.CommitHash), runtime.GOOS, runtime.GOARCH, config.BuildDate)
+			config.DefaultApp.Logger.Infof("\033[32mcreate-go-app\033[0m v%s-%s %s/%s BuildDate: %s\n", config.Version, strings.ToUpper(config.CommitHash), runtime.GOOS, runtime.GOARCH, config.BuildDate)
 		}
 	},
 }

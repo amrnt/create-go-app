@@ -1,10 +1,18 @@
-hash: 2837d82fa0b38745ce6e1ed924f1f28222c5ffaabcbad2aaf3a8189b75d6bcbf
-updated: 2017-04-17T02:19:29.394082286+02:00
+hash: 6252983d7accc25c075eea585f50f9673d0b549cea982338a8faaf1049328e26
+updated: 2017-04-27T23:55:54.341970231+02:00
 imports:
 - name: github.com/inconshreveable/mousetrap
   version: 76626ae9c91c4f2a10f34cad8ce83ea42c93bb75
+- name: github.com/Sirupsen/logrus
+  version: ba1b36c82c5e05c4f912a88eab0dcd91a171688f
 - name: github.com/spf13/cobra
-  version: 5deb57bbca49eb370538fc295ba4b2988f9f5e09
+  version: 7b1b6e8dc027253d45fc029bc269d1c019f83a34
 - name: github.com/spf13/pflag
-  version: e453343e6260b4a3a89f1f0e10a2fbb07f8d9750
+  version: f1d95a35e132e8a1868023a08932b14f0b8b8fcb
+- name: github.com/spf13/viper
+  version: 0967fc9aceab2ce9da34061253ac10fb99bba5b2
+- name: golang.org/x/sys
+  version: f3918c30c5c2cb527c0b071a27c35120a6c0719a
+  subpackages:
+  - unix
 testImports: []

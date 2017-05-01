@@ -1,8 +1,6 @@
 package cmd
 
 import (
-	"fmt"
-
 	"github.com/amrnt/create-go-app/pkg/config"
 	"github.com/spf13/cobra"
 )
@@ -16,6 +14,6 @@ var serverCmd = &cobra.Command{
 	Short: "",
 	Long:  ``,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Running server...")
+		config.DefaultApp.Logger.Info("Running server...")
 	},
 }
