@@ -7,20 +7,22 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var rootCmd = &cobra.Command{
-	Use:   "create-go-app",
-	Short: "",
-	Long:  ``,
-}
-
 func init() {
-	config.DefaultApp.Cmd = rootCmd
+	config.DefaultApp.Cmd = &cobra.Command{
+		Use:   "create-go-app",
+		Short: "",
+		Long:  ``,
+		RunE: func(cmd *cobra.Command, args []string) error {
+			return serverCmd.RunE(cmd, args)
+		},
+	}
 }
 
 // Execute ...
 func Execute() {
-	if err := config.DefaultApp.Cmd.Execute(); err != nil {
-		config.DefaultApp.Logger.Error(err)
+	if c, err := config.DefaultApp.Cmd.ExecuteC(); err != nil {
+		c.Println("")
+		c.Println(c.UsageString())
 		os.Exit(-1)
 	}
 }

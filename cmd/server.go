@@ -13,7 +13,8 @@ var serverCmd = &cobra.Command{
 	Use:   "server",
 	Short: "",
 	Long:  ``,
-	Run: func(cmd *cobra.Command, args []string) {
+	RunE: func(cmd *cobra.Command, args []string) error {
 		config.DefaultApp.Logger.Info("Running server...")
+		return nil
 	},
 }
